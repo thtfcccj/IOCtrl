@@ -3,8 +3,8 @@
              IOCtrl在PIC单片机中的实现模板
 
 ***************************************************************************/
-#ifndef _IOCTRL_PIC_H
-#define _IOCTRL_PIC_H
+#ifndef __IOCTRL_PIC_H
+#define __IOCTRL_PIC_H
 
 #include <pic.h>
 
@@ -43,7 +43,7 @@
 }while(0)
 
 
-#endif //#define _IOCTRL_PIC_H
+#endif //#define __IOCTRL_PIC_H
 
 
 

@@ -5,8 +5,8 @@
 1. 此接口为具体项目: 所有输入输出引脚(IO)的操作,提供统一接口。实现了调用层
    与硬件输入输出中的分离。
 ***************************************************************************/
-#ifndef _IOCTRL_H
-#define _IOCTRL_H
+#ifndef __IOCTRL_H
+#define __IOCTRL_H
 
 //下列代码与具体应用有关，接需修改:
 
@@ -14,4 +14,4 @@
   #include "IOCtrl_PIC.h"  //PIC IO操作模板
 #endif 
 
-#endif //#define _IOCTRL_H
+#endif //#define __IOCTRL_H
