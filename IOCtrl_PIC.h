@@ -7,6 +7,7 @@
 #define __IOCTRL_PIC_H
 
 #include <pic.h>
+#include "PicBit.h"
 
 //-------------------------对Xxx功能口的所有操作--------------------------
 //Xxx建议直接使用硬件PCB上的定义,建议全部为大写,且必须保证在项目中的唯一性
@@ -32,14 +33,13 @@
 #define IsPullUpXxx()	    (WPUB & BIT_Xxx)
 
 //初始化及配置(此函数在用到的模块中调用, 以配置为输出高电平为例):
-#define CfgXxx() do{SetXxx();OutXxx();}while(0)
+#define CfgXxx() do{ANSELB &= ~BIT_Xxx; SetXxx(); OutXxx();}while(0)
 
 //-------------------------IO口的统一配置操作--------------------------
 //此函数在开机初始化时统一调用,可用于置不会用到的IO口为需要的状态等
 //IOCtrl_Init()为IOCtrl的构造函数,不做任何事时,请实现为空.
 #define IOCtrl_Init()  do{\
   OPTION_REG &= ~PICB_nWPUEN;\
-  ANSELA = 0x00; ANSELB = 0x00;\
 }while(0)
 
 
